@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     ];
 
     const board = Array.from(document.querySelectorAll('.square'));
-    console.log(board);
+    //console.log(board);
     let playerx = true;
     let playero = false;
 
@@ -111,8 +111,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
         //console.log(winner);
         return winner;
-        
+    }
+
+    //Exercise 5
+    let btn = document.getElementsByClassName("btn")[0];
+    btn.addEventListener("click", game_reset);
+
+    function game_reset(){
+        document.querySelectorAll('.square').forEach((e) => {
+            e.innerHTML = "";
+            location.reload();
+        });
     }
     
   })
-
