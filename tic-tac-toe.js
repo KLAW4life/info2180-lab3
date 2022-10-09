@@ -34,12 +34,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         sq.addEventListener("click", function(sq){
             if (playerx && sq.target.textContent == ''){   //sq.target means for the square that is being clicked currently. .textContent is for what is currently in the square
                 sq.target.textContent = 'X';
+                sq.target.className += ' X'
                 playerx = false;
                 playero = true;
                 
             }
             else if (playero && sq.target.textContent == ''){
                 sq.target.textContent = 'O';
+                sq.target.className += ' O'
                 playerx = true;
                 playero = false;
             }
@@ -47,6 +49,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }); 
     });
 
+    //Exercise 3
+    squares.forEach((sq) =>{
+        sq.addEventListener("mouseover", function(sq){
+            sq.target.className += " hover";
+        })
+
+        sq.addEventListener("mouseout", function(sq){
+            sq.target.classList.remove("hover");
+        })
+    });
     
   })
 
